@@ -58,11 +58,27 @@ db.produtos.insertMany([
         id_produto: "87u2"
     },
     {
+        nome: "Veglicious",
+        categoria: "Sandubas",
+        descricao: "Pão macio, Delicioso hamburger de grão de bico 100g - molho vegano de shoyu com mostarda - alface - tomate - cebola frita",
+        preco: 30.90,
+        id_produto: "j7u2",
+        veg: "sim"
+    },
+    {
         nome: "Achocolatado Nescau",
         categoria: "Bebidas",
         descricao: "Embalagem 200 ml",
         preco: 3.90,
         id_produto: "990x"
+    },
+    {
+        nome: "Suco de Laranja",
+        categoria: "Bebidas",
+        descricao: "Copo 200 ml",
+        preco: 4.00,
+        id_produto: "777b",
+        veg: "sim"
     },
     {
         nome: "Milk Shake",
@@ -83,7 +99,7 @@ db.produtos.insertMany([
         categoria: "Bebidas",
         descricao: "Coca-Cola 1,5 L",
         preco: 13.90,
-        id_produto: "an5k"
+        id_produto: "34b6"
     },
     {
         nome: "Refrigerante 1,5 L",
@@ -95,16 +111,31 @@ db.produtos.insertMany([
     {
         nome: "Refrigerante Lata",
         categoria: "Bebidas",
-        descricao: "Lata 350 ml",
+        descricao: "Coca-Cola 350 ml",
+        preco: 6.50,
+        id_produto: "g3kk"
+    },
+    {
+        nome: "Refrigerante Lata",
+        categoria: "Bebidas",
+        descricao: "Antartica 350 ml",
         preco: 6.50,
         id_produto: "g3kk"
     },
     {
         nome: "Coca-Cola 500 ml",
         categoria: "Bebidas",
-        descricao: "Lata 350 ml",
+        descricao: "Garrafa 500 ml",
         preco: 6.50,
-        id_produto: "g3kk"
+        id_produto: "h4ll"
+    },
+    {
+        nome: "Água 500 ml",
+        categoria: "Bebidas",
+        descricao: "Garrafa 500 ml",
+        preco: 2.00,
+        id_produto: "mn9l",
+        veg: "sim"
     },
     {
         nome: "Pizza Frango Catupiry e Bacon",
@@ -160,28 +191,32 @@ db.produtos.insertMany([
         categoria: "petiscos",
         descricao: "Delicioso nugget feito a base de vegetais",
         preco: 14.90,
-        id_produto: "fs41"
+        id_produto: "fs41",
+        veg: "sim"
     },
     {
         nome: "Onion rings",
         categoria: "petiscos",
         descricao: "Cebolinhas empanadas com molho especial grátis >> aproveite, porção com 10 unidades ou aprox 200g",
         preco: 18.90,
-        id_produto: "s25d"
+        id_produto: "s25d",
+        veg: "sim"
     },
     {
         nome: "Batata Frita G",
         categoria: "petiscos",
         descricao: "Batatinhas Mccain sequinhas e quentinhas em sua casa, porção 150g aproximadamente.",
         preco: 17.90,
-        id_produto: "g5s5"
+        id_produto: "g5s5",
+        veg: "sim"
     },
     {
         nome: "Batata Frita P",
         categoria: "petiscos",
         descricao: "Batatinhas crocantes e sequinhas Mccain. Aproximadamente 110g",
         preco: 16.90,
-        id_produto: "c4e2"
+        id_produto: "c4e2",
+        veg: "sim"
     }
 
 
@@ -216,11 +251,11 @@ db.combos.insertMany([
    
     {
         nome: "Combo Clone Pizza Frango, Catupity, Bacon e Nordestina",
-        categoria: "";
+        categoria: "",
         preco: 90.90,
         produtos: [
             db.produtos.findOne({id_produto: "569s"})._id, // pizza frango catupiry e bacon
-            db.produtos.findOne({id_produto: "64r1"})._id, //Nordestina 1jj4
+            db.produtos.findOne({id_produto: "64r1"})._id, //Nordestina
             db.produtos.findOne({id_produto: "1jj4"})._id  //Refri
             
         ],
@@ -228,19 +263,19 @@ db.combos.insertMany([
     },
     {
         nome: "Combo Clone Pizza Pizza Potuguesa e Peperone",
-        categoria: "";
+        categoria: "",
         preco: 80.90,
         produtos: [
-            db.produtos.findOne({id_produto: "569s"})._id, // pizza frango catupiry e bacon
-            db.produtos.findOne({id_produto: "64r1"})._id, //Nordestina 1jj4
-            db.produtos.findOne({id_produto: "1jj4"})._id  //Refri
+            db.produtos.findOne({id_produto: "s54d"})._id, // pizza portuguesa
+            db.produtos.findOne({id_produto: "6s15"})._id, // peperone
+            db.produtos.findOne({id_produto: "34b6"})._id  // Refri
             
         ],
         id_combo: "xrl8"
     },
     {
         nome: "Combo Maldição da Gula",
-        categoria: "";
+        categoria: "",
         preco: 132.90,
         produtos: [
             db.produtos.findOne({id_produto: "g5s5"})._id, // batata frita G
@@ -254,7 +289,7 @@ db.combos.insertMany([
     },
     {
         nome: "Combo Smash da Luxúria",
-        categoria: "";
+        categoria: "",
         preco: 92.90,
         produtos: [
             db.produtos.findOne({id_produto: "a0b7"})._id, // Smash Cheddar
@@ -266,7 +301,7 @@ db.combos.insertMany([
     },
     {
         nome: "Combo Petisco da Ganância",
-        categoria: "";
+        categoria: "",
         preco: 45.90,
         produtos: [
             db.produtos.findOne({id_produto: "c4e2"})._id, // Batata Frita P
@@ -277,7 +312,7 @@ db.combos.insertMany([
     },
     {
         nome: "Combo Delícia Soberba",
-        categoria: "";
+        categoria: "",
         preco: 22.90,
         produtos: [
             db.produtos.findOne({id_produto: "990x"})._id, // Achocolatado Nescau
@@ -287,13 +322,14 @@ db.combos.insertMany([
         id_combo: "jrsm"
     },
     {
-        nome: "Combo Preguiça Vegetariana",
-        categoria: "";
+        nome: "Combo Preguiça Vegana",
+        categoria: "",
         preco: 48.90,
         produtos: [
             db.produtos.findOne({id_produto: "fs41"})._id, // Nuggets Vegetal
             db.produtos.findOne({id_produto: "s25d"})._id, // Onion rings
-            db.produtos.findOne({id_produto: "g5s5"})._id // Batata Frita G           
+            db.produtos.findOne({id_produto: "g5s5"})._id, // Batata Frita G 
+            db.produtos.findOne({id_produto: "j7u2"})._id // Sanduba Veg          
         ],
         id_combo: "fgm3"
     }
