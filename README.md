@@ -13,11 +13,11 @@ Tema: Lanchonete
 - [x] ADDTOSET
 
 ### Filipe
-- [ ] FIND
-- [ ] GROUP
-- [ ] SORT
-- [ ] ALL
-- [ ] SAVE
+- [x] FIND
+- [x] GROUP
+- [x] SORT
+- [x] ALL
+- [x] SAVE
 
 ### Gustavo
 - [ ] SIZE

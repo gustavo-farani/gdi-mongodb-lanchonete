@@ -120,7 +120,7 @@ db.produtos.insertMany([
         categoria: "Bebidas",
         descricao: "Antartica 350 ml",
         preco: 6.50,
-        id_produto: "g3kk"
+        id_produto: "g3kj"
     },
     {
         nome: "Coca-Cola 500 ml",
@@ -217,10 +217,7 @@ db.produtos.insertMany([
         preco: 16.90,
         id_produto: "c4e2",
         veg: "sim"
-    }
-
-
-    
+    }  
 ]);
 
 // Inserindo produtos da categoria pratos
@@ -248,15 +245,14 @@ db.createCollection("combos");
 
 // inserção dos combos um por um, usando produtos já existentes
 db.combos.insertMany([
-   
     {
         nome: "Combo Clone Pizza Frango, Catupity, Bacon e Nordestina",
         categoria: "",
         preco: 90.90,
         produtos: [
             db.produtos.findOne({id_produto: "569s"})._id, // pizza frango catupiry e bacon
-            db.produtos.findOne({id_produto: "64r1"})._id, //Nordestina
-            db.produtos.findOne({id_produto: "1jj4"})._id  //Refri
+            db.produtos.findOne({id_produto: "64r1"})._id, // Nordestina
+            db.produtos.findOne({id_produto: "1jj4"})._id  // Refri
             
         ],
         id_combo: "cfpj"
@@ -295,7 +291,19 @@ db.combos.insertMany([
             db.produtos.findOne({id_produto: "a0b7"})._id, // Smash Cheddar
             db.produtos.findOne({id_produto: "0c88"})._id, // Smash Mussarela
             db.produtos.findOne({id_produto: "6s15"})._id, // Pizza Peperone
-            db.produtos.findOne({id_produto: "an5k"})._id // Refrigerante 1,5L           
+            db.produtos.findOne({id_produto: "an5k"})._id  // Refrigerante 1,5L           
+        ],
+        id_combo: "baws"
+    },
+    {
+        nome: "Combo Smash da Gula",
+        categoria: "",
+        preco: 92.90,
+        produtos: [
+            db.produtos.findOne({id_produto: "0e87"})._id, // Smash Coração
+            db.produtos.findOne({id_produto: "0c88"})._id, // Smash Mussarela
+            db.produtos.findOne({id_produto: "s54d"})._id, // pizza portuguesa
+            db.produtos.findOne({id_produto: "an5k"})._id  // Refrigerante 1,5L           
         ],
         id_combo: "baws"
     },
@@ -306,7 +314,7 @@ db.combos.insertMany([
         produtos: [
             db.produtos.findOne({id_produto: "c4e2"})._id, // Batata Frita P
             db.produtos.findOne({id_produto: "65dg"})._id, // Coxinha de Frango com Catupiry
-            db.produtos.findOne({id_produto: "gc51"})._id // Bolinho de CharqueL           
+            db.produtos.findOne({id_produto: "gc51"})._id  // Bolinho de CharqueL           
         ],
         id_combo: "gff2"
     },
@@ -317,7 +325,7 @@ db.combos.insertMany([
         produtos: [
             db.produtos.findOne({id_produto: "990x"})._id, // Achocolatado Nescau
             db.produtos.findOne({id_produto: "217h"})._id, // Milk Shake
-            db.produtos.findOne({id_produto: "g3kk"})._id // Refrigerante Lata           
+            db.produtos.findOne({id_produto: "g3kk"})._id  // Refrigerante Lata           
         ],
         id_combo: "jrsm"
     },
@@ -329,7 +337,7 @@ db.combos.insertMany([
             db.produtos.findOne({id_produto: "fs41"})._id, // Nuggets Vegetal
             db.produtos.findOne({id_produto: "s25d"})._id, // Onion rings
             db.produtos.findOne({id_produto: "g5s5"})._id, // Batata Frita G 
-            db.produtos.findOne({id_produto: "j7u2"})._id // Sanduba Veg          
+            db.produtos.findOne({id_produto: "j7u2"})._id  // Sanduba Veg          
         ],
         id_combo: "fgm3"
     }
