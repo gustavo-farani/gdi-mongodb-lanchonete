@@ -6,11 +6,11 @@ Tema: Lanchonete
 
 ### Bruna
 - [x] USE
-- [ ] GTE
-- [ ] EXISTS
-- [ ] PRETTY
-- [ ] UPDATE
-- [ ] ADDTOSET
+- [x] GTE
+- [x] EXISTS
+- [x] PRETTY
+- [x] UPDATE
+- [x] ADDTOSET
 
 ### Filipe
 - [ ] FIND
