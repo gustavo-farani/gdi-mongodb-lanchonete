@@ -156,25 +156,32 @@ db.produtos.insertMany([
         id_produto: "65dg"
     },
     {
-        nome: "",
+        nome: "Nuggets Vegetal",
         categoria: "petiscos",
-        descricao: "",
-        preco: ,
-        id_produto: ""
+        descricao: "Delicioso nugget feito a base de vegetais",
+        preco: 14.90,
+        id_produto: "fs41"
     },
     {
-        nome: "",
+        nome: "Onion rings",
         categoria: "petiscos",
-        descricao: "",
-        preco: ,
-        id_produto: ""
+        descricao: "Cebolinhas empanadas com molho especial grátis >> aproveite, porção com 10 unidades ou aprox 200g",
+        preco: 18.90,
+        id_produto: "s25d"
     },
     {
-        nome: "",
+        nome: "Batata Frita G",
         categoria: "petiscos",
-        descricao: "",
-        preco: ,
-        id_produto: ""
+        descricao: "Batatinhas Mccain sequinhas e quentinhas em sua casa, porção 150g aproximadamente.",
+        preco: 17.90,
+        id_produto: "g5s5"
+    },
+    {
+        nome: "Batata Frita P",
+        categoria: "petiscos",
+        descricao: "Batatinhas crocantes e sequinhas Mccain. Aproximadamente 110g",
+        preco: 16.90,
+        id_produto: "c4e2"
     }
 
 
@@ -205,33 +212,161 @@ db.produtos.insertMany([
 db.createCollection("combos");
 
 // inserção dos combos um por um, usando produtos já existentes
-db.combos.insertOne(
-    /*
+db.combos.insertMany([
+   
     {
-        nome: "",
+        nome: "Combo Clone Pizza Frango, Catupity, Bacon e Nordestina",
         categoria: "";
-        preco: ,
+        preco: 90.90,
         produtos: [
-            db.produtos.findOne({id_produto: ""})._id
+            db.produtos.findOne({id_produto: "569s"})._id, // pizza frango catupiry e bacon
+            db.produtos.findOne({id_produto: "64r1"})._id, //Nordestina 1jj4
+            db.produtos.findOne({id_produto: "1jj4"})._id  //Refri
+            
         ],
-        id_combo: ""
+        id_combo: "cfpj"
+    },
+    {
+        nome: "Combo Clone Pizza Pizza Potuguesa e Peperone",
+        categoria: "";
+        preco: 80.90,
+        produtos: [
+            db.produtos.findOne({id_produto: "569s"})._id, // pizza frango catupiry e bacon
+            db.produtos.findOne({id_produto: "64r1"})._id, //Nordestina 1jj4
+            db.produtos.findOne({id_produto: "1jj4"})._id  //Refri
+            
+        ],
+        id_combo: "xrl8"
+    },
+    {
+        nome: "Combo Maldição da Gula",
+        categoria: "";
+        preco: 132.90,
+        produtos: [
+            db.produtos.findOne({id_produto: "g5s5"})._id, // batata frita G
+            db.produtos.findOne({id_produto: "fs41"})._id, // nuggets
+            db.produtos.findOne({id_produto: "6s15"})._id, // Pizza Peperone
+            db.produtos.findOne({id_produto: "87u2"})._id, // Cheese Burguer de Frango
+            db.produtos.findOne({id_produto: "1jj4"})._id, // Refrigerante 1,5L
+            db.produtos.findOne({id_produto: "s25d"})._id  // Onion rings
+        ],
+        id_combo: "wbsj"
+    },
+    {
+        nome: "Combo Smash da Luxúria",
+        categoria: "";
+        preco: 92.90,
+        produtos: [
+            db.produtos.findOne({id_produto: "a0b7"})._id, // Smash Cheddar
+            db.produtos.findOne({id_produto: "0c88"})._id, // Smash Mussarela
+            db.produtos.findOne({id_produto: "6s15"})._id, // Pizza Peperone
+            db.produtos.findOne({id_produto: "an5k"})._id // Refrigerante 1,5L           
+        ],
+        id_combo: "baws"
+    },
+    {
+        nome: "Combo Petisco da Ganância",
+        categoria: "";
+        preco: 45.90,
+        produtos: [
+            db.produtos.findOne({id_produto: "c4e2"})._id, // Batata Frita P
+            db.produtos.findOne({id_produto: "65dg"})._id, // Coxinha de Frango com Catupiry
+            db.produtos.findOne({id_produto: "gc51"})._id // Bolinho de CharqueL           
+        ],
+        id_combo: "gff2"
+    },
+    {
+        nome: "Combo Delícia Soberba",
+        categoria: "";
+        preco: 22.90,
+        produtos: [
+            db.produtos.findOne({id_produto: "990x"})._id, // Achocolatado Nescau
+            db.produtos.findOne({id_produto: "217h"})._id, // Milk Shake
+            db.produtos.findOne({id_produto: "g3kk"})._id // Refrigerante Lata           
+        ],
+        id_combo: "jrsm"
+    },
+    {
+        nome: "Combo Preguiça Vegetariana",
+        categoria: "";
+        preco: 48.90,
+        produtos: [
+            db.produtos.findOne({id_produto: "fs41"})._id, // Nuggets Vegetal
+            db.produtos.findOne({id_produto: "s25d"})._id, // Onion rings
+            db.produtos.findOne({id_produto: "g5s5"})._id // Batata Frita G           
+        ],
+        id_combo: "fgm3"
     }
-    */
-
-    
-    
-
-
-);
+]);
 
 db.createCollection("cardapio");
 
 db.cardapio.insertOne(
     {
-        nome: "",
-        dia_de_semana: "",
+        nome: "Segunda feira da Preguiça",
+        dia_de_semana: "Segunda",
         combos: [
-            db.combos.findOne({id_combo: ""})
+            db.combos.findOne({id_combo: "fgm3"})
         ]
     }
-)
+);
+
+db.cardapio.insertOne(
+    {
+        nome: "Terça feira Soberba",
+        dia_de_semana: "Terça",
+        combos: [
+            db.combos.findOne({id_combo: "jrsm"})
+        ]
+    }
+);
+
+db.cardapio.insertOne(
+    {
+        nome: "Quarta feira da Ganância",
+        dia_de_semana: "Quarta",
+        combos: [
+            db.combos.findOne({id_combo: "gff2"})
+        ]
+    }
+);
+
+db.cardapio.insertOne(
+    {
+        nome: "Quinta feira da Luxúria",
+        dia_de_semana: "Quinta",
+        combos: [
+            db.combos.findOne({id_combo: "baws"})
+        ]
+    }
+);
+
+db.cardapio.insertOne(
+    {
+        nome: "Sexta feira da Gula",
+        dia_de_semana: "Sexta",
+        combos: [
+            db.combos.findOne({id_combo: "wbsj"})
+        ]
+    }
+);
+
+db.cardapio.insertOne(
+    {
+        nome: "Sabadão do Clone de Pizza",
+        dia_de_semana: "Sabadão",
+        combos: [
+            db.combos.findOne({id_combo: "cfpj"})
+        ]
+    }
+);
+
+db.cardapio.insertOne(
+    {
+        nome: "Domingão do Clone de Pizza",
+        dia_de_semana: "Domingão",
+        combos: [
+            db.combos.findOne({id_combo: "xrl8"})
+        ]
+    }
+);
