@@ -229,7 +229,6 @@ db.createCollection("combos");
 db.combos.insertMany([
     {
         nome: "Combo Clone Pizza Frango, Catupiry, Bacon e Nordestina",
-        categoria: "",
         preco: 90.90,
         produtos: [
             db.produtos.findOne({id_produto: "569s"})._id, // pizza frango catupiry e bacon
@@ -241,7 +240,6 @@ db.combos.insertMany([
     },
     {
         nome: "Combo Clone Pizza Potuguesa e Peperone",
-        categoria: "",
         preco: 80.90,
         produtos: [
             db.produtos.findOne({id_produto: "s54d"})._id, // pizza portuguesa
@@ -253,7 +251,6 @@ db.combos.insertMany([
     },
     {
         nome: "Combo Maldição da Gula",
-        categoria: "",
         preco: 132.90,
         produtos: [
             db.produtos.findOne({id_produto: "g5s5"})._id, // batata frita G
@@ -267,7 +264,6 @@ db.combos.insertMany([
     },
     {
         nome: "Combo Smash da Luxúria",
-        categoria: "",
         preco: 92.90,
         produtos: [
             db.produtos.findOne({id_produto: "a0b7"})._id, // Smash Cheddar
@@ -279,7 +275,6 @@ db.combos.insertMany([
     },
     {
         nome: "Combo Smash da Gula",
-        categoria: "",
         preco: 92.90,
         produtos: [
             db.produtos.findOne({id_produto: "0e87"})._id, // Smash Coração
@@ -291,7 +286,6 @@ db.combos.insertMany([
     },
     {
         nome: "Combo Petisco da Ganância",
-        categoria: "",
         preco: 45.90,
         produtos: [
             db.produtos.findOne({id_produto: "c4e2"})._id, // Batata Frita P
@@ -302,7 +296,6 @@ db.combos.insertMany([
     },
     {
         nome: "Combo Delícia Soberba",
-        categoria: "",
         preco: 22.90,
         produtos: [
             db.produtos.findOne({id_produto: "990x"})._id, // Achocolatado Nescau
@@ -313,7 +306,6 @@ db.combos.insertMany([
     },
     {
         nome: "Combo Preguiça Vegana",
-        categoria: "",
         preco: 48.90,
         produtos: [
             db.produtos.findOne({id_produto: "fs41"})._id, // Nuggets Vegetal
@@ -325,7 +317,6 @@ db.combos.insertMany([
     },
     {
         nome: "Combo de FIT não tem NADA",
-        categoria: "",
         preco: 47.90,
         produtos: [
             db.produtos.findOne({id_produto: "0e87"})._id, 
