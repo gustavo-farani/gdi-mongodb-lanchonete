@@ -27,11 +27,11 @@ Tema: Lanchonete
 - [ ] RENAMECOLLECTION
 
 ### Walmir
-- [ ] AGGREGATE
-- [ ] COUNT
-- [ ] $WHERE
-- [ ] TEXT
-- [ ] COND
+- [x] AGGREGATE
+- [x] COUNT
+- [x] $WHERE
+- [x] TEXT
+- [x] COND
 
 ### Carlos
 - [x] MATCH
