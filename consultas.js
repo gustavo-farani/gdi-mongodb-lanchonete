@@ -168,4 +168,32 @@ db.produtos.mapReduce (
 
 db.mapReduce.find().sort({"value":-1});
 
+/*
+COUNT
+    Retorna quantos produtos existem no banco de dados
+*/
+db.produtos.count();
+
+/*
+WHERE
+    Retorna um produto específico com ID igual a "0e87"
+*/
+db.produtos.find({$where: function() {
+    return (this.id_produto == "0e87")
+}
+});
+
+/* 
+COND
+    Retorna todos os produtos com um desconto de 10% aos items que custam mais de 30 reais 
+*/
+
+db.produtos.aggregate(
+    { $project: {
+        nome: true,
+        preco: '$preco',
+        categoria: '$categoria',
+        desconto: {$cond: [{$gt: ['$preco', 30]}, { $multiply: [ "$preco", 0.9 ] } , '$preco' ]}
+    }}).pretty();
+
 
