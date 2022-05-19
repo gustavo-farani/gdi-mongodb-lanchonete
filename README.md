@@ -10,6 +10,9 @@ Lanchonete
 - [x] USE
 - [x] RENAMECOLLECTION
 - [X] COUNT
+- [x] COND
+- [x] $WHERE
+- [x] FUNCTION
 
 ### Bruna
 - [x] UPDATE
@@ -25,8 +28,6 @@ Lanchonete
 - [x] SAVE
 
 ### Rodrigo
-- [x] $WHERE
-- [x] FUNCTION
 - [x] FINDONE
 - [x] AGGREGATE
 - [x] GROUP
@@ -39,7 +40,6 @@ Lanchonete
 - [x] LOOKUP
 - [x] SET
 - [x] FILTER
-- [x] COND
 - [x] PROJECT
 - [x] SIZE
 

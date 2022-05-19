@@ -13,6 +13,23 @@ db.produtos.count();
 db.combos.count();
 db.cardapios.count();
 
+// $WHERE, FUNCTION
+//Retorna um produto específico com ID igual a "0e87"
+db.produtos.find({$where: function() {
+    return (this.id_produto == "0e87")
+}
+}).pretty();
+
+// COND
+// Retorna todos os produtos com um desconto de 10% aos items que custam mais de 30 reais 
+db.produtos.aggregate(
+{ $project: {
+    nome: true,
+    preco: '$preco',
+    categoria: '$categoria',
+    desconto: {$cond: [{$gt: ['$preco', 30]}, { $multiply: [ "$preco", 0.9 ] } , '$preco' ]}
+}}).pretty();
+
 /* Bruna */
 
 // UPDATE, ADDTOSET, PRETTY
@@ -60,13 +77,6 @@ db.produtos.save({
 });
 
 /* Rodrigo */
-
-// $WHERE, FUNCTION
-// Lista o cardapio de nome Quinta feira da Luxúria
-db.cardapios.find({$where: function() {
-    return (this.nome == "Quinta feira da Luxúria")
-}
-});
 
 // FINDONE: Retorna uma bebida
 db.produtos.findOne({categoria: "Bebidas"});
@@ -154,4 +164,5 @@ db.produtos.mapReduce (
     map,
     { out: "mapReduce"}
 );
+
 db.mapReduce.find().sort({"value":-1});
