@@ -100,3 +100,72 @@ db.produtos.aggregate([
 // FINDONE: Retorna uma bebida
 
 db.produtos.findOne({categoria: "Bebidas"});
+
+
+/*
+MATCH
+Retorna os produtos com precos entre 10 e 20 reais
+*/
+db.produtos.aggregate( [
+{ $match: { preco: { $gt: 10, $lt: 20} } }
+]).pretty();
+
+
+/*
+MAX
+Para cada categoria, é retornado o preco do produto mais caro de cada categoria.
+*/
+db.produtos.aggregate([
+    {
+        $group:
+            {
+                _id: "$categoria",
+                maior_preco: {$max: "$preco"},
+            }
+    }
+]);
+
+/*
+SEARCH
+Retorna todos os combos que tem a string Vegetariana em seu nome
+*/
+
+db.combos.createIndex({nome: "text"}); /*Criando index para chamar a cláusula search */
+db.combos.find(
+   { $text: { $search: "Vegetariana"} }
+).pretty()
+
+/* 
+LOOKUP
+Retorna todos os produtos com um campo a mais (array de combos com preco igual ao produto corrente). Esse array será preenchido
+com combos se o preco do produto corrente for igual ao preço do combo (ver o produto retornado Pizza Peperone).
+*/
+
+db.produtos.aggregate([
+    {
+        $lookup: {
+            from: "combos",
+            localField: "preco",
+            foreignField: "preco",
+            as: "array de combos com preco igual ao produto corrente"
+        }
+    }
+]).pretty();
+
+/* 
+MAPREDUCE
+Percorre todo os itens (produtos) de modo a ordená-los em ordem crescente de precos
+*/
+
+var map = function () {
+    emit (this.nome, this.preco);
+};
+
+db.produtos.mapReduce (
+    map,
+    { out: "mapReduce"}
+);
+
+db.mapReduce.find().sort({"value":-1});
+
+

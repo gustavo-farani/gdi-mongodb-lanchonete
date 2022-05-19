@@ -340,8 +340,23 @@ db.combos.insertMany([
             db.produtos.findOne({id_produto: "j7u2"})._id  // Sanduba Veg          
         ],
         id_combo: "fgm3"
+    },
+    {
+        nome: "Combo de FIT não tem NADA",
+        categoria: "",
+        preco: 47.90,
+        produtos: [
+            db.produtos.findOne({id_produto: "0e87"})._id, 
+            db.produtos.findOne({id_produto: "gc51"})._id,
+            db.produtos.findOne({id_produto: "87u2"})._id,
+            db.produtos.findOne({id_produto: "g5s5"})._id
+        ],
+        id_combo: "xrl7"
+
     }
 ]);
+
+
 
 db.createCollection("cardapio");
 

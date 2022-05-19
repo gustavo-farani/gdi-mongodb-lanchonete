@@ -34,11 +34,11 @@ Tema: Lanchonete
 - [ ] COND
 
 ### Carlos
-- [ ] MATCH
-- [ ] MAX
-- [ ] MAPREDUCE
-- [ ] SEARCH
-- [ ] LOOKUP
+- [x] MATCH
+- [x] MAX
+- [x] MAPREDUCE
+- [x] SEARCH
+- [x] LOOKUP
 
 ### Rodrigo
 - [x] PROJECT
