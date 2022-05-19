@@ -1,3 +1,5 @@
+use lanchonete;
+
 // Dropando o database pra povoar tudo novamente
 db.dropDatabase();
 
@@ -220,33 +222,13 @@ db.produtos.insertMany([
     }  
 ]);
 
-// Inserindo produtos da categoria pratos
-db.produtos.insertMany([
-    /*
-    {
-        nome: "",
-        categoria: "Prato",
-        descricao: "",
-        preco: ,
-        id_produto: ""
-    }
-    */
-    {
-        nome: "Smash Cheddar",
-        categoria: "Sandubas",
-        descricao: "Pão Dourarinho selado na manteiga, duas carnes fininhas bem tostadas e sequinhas com duas fatias de delicioso queijo cheddar e cebola refogada dando aquele toque especial com sua maionese artesanal!!",
-        preco: 19.90,
-        id_produto: "a0b7"
-    }
-]);
-
 // Criação da categoria de combos
 db.createCollection("combos");
 
 // inserção dos combos um por um, usando produtos já existentes
 db.combos.insertMany([
     {
-        nome: "Combo Clone Pizza Frango, Catupity, Bacon e Nordestina",
+        nome: "Combo Clone Pizza Frango, Catupiry, Bacon e Nordestina",
         categoria: "",
         preco: 90.90,
         produtos: [
@@ -258,7 +240,7 @@ db.combos.insertMany([
         id_combo: "cfpj"
     },
     {
-        nome: "Combo Clone Pizza Pizza Potuguesa e Peperone",
+        nome: "Combo Clone Pizza Potuguesa e Peperone",
         categoria: "",
         preco: 80.90,
         produtos: [
@@ -356,8 +338,6 @@ db.combos.insertMany([
     }
 ]);
 
-
-
 db.createCollection("cardapio");
 
 db.cardapio.insertOne(
@@ -429,3 +409,5 @@ db.cardapio.insertOne(
         ]
     }
 );
+
+show collections;
