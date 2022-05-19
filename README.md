@@ -47,4 +47,4 @@ Lanchonete
 - [x] MATCH
 - [x] TEXT
 - [x] SEARCH
-- [ ] MAPREDUCE
+- [x] MAPREDUCE

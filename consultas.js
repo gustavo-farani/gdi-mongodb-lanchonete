@@ -156,13 +156,14 @@ db.combos.createIndex({ nome: "text" }); /*Criando index para chamar a cláusula
 db.combos.find( { $text: { $search: "pizza"} } ).pretty();
 
 // MAPREDUCE
-// Percorre todo os itens (produtos) de modo a ordená-los em ordem crescente de precos
-var map = function () {
-    emit (this.nome, this.preco);
-};
-db.produtos.mapReduce (
-    map,
-    { out: "mapReduce"}
+// Seleciona apenas os produtos da categoria bebida, agrupa pelo nome e conta as ocorrências
+db.produtos.mapReduce(
+    function() { emit( this.nome, 1 ); },
+    function(key, values) { return Array.sum(values); },
+    {   
+        query: { categoria: "Bebidas" },
+        out: "mapReduce"
+    }
 );
 
-db.mapReduce.find().sort({"value":-1});
+db.mapReduce.find().pretty();
