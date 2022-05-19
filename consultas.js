@@ -72,7 +72,7 @@ db.combos.aggregate([
                 avgPreco: {$avg: "$preco"}
             }
     }
-]);
+]).pretty();
 
 //FUNCTION: Lista o cardapio de nome Quinta feira da Luxúria
 
