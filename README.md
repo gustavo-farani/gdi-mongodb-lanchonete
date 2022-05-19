@@ -41,8 +41,8 @@ Tema: Lanchonete
 - [ ] LOOKUP
 
 ### Rodrigo
-- [ ] PROJECT
-- [ ] AVG
-- [ ] FUNCTION
-- [ ] FILTER
-- [ ] FINDONE
+- [x] PROJECT
+- [x] AVG
+- [x] FUNCTION
+- [x] FILTER
+- [x] FINDONE

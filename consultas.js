@@ -47,6 +47,56 @@ db.produtos.save({
     id_produto: "g3kk"
 });
 
-
+//Consultas Rodrigo
+// Project, vai retornar o nome do produto e o preço.
 db.produtos.find({id_produto: "g3kk"}).pretty();
 
+db.produtos.aggregate([
+    {
+        $project:
+        {
+            _id: 0,
+            nome: 1,
+            preco: 1
+        }
+    }
+]);
+
+// AVG: retorna a média de preço dos combos
+
+db.combos.aggregate([
+    {
+        $group:
+            {
+                _id: "$preco",
+                avgPreco: {$avg: "$preco"}
+            }
+    }
+]);
+
+//FUNCTION: Lista o cardapio de nome Quinta feira da Luxúria
+
+db.cardapio.find({$where: function() {
+    return (this.nome == "Quinta feira da Luxúria")
+}
+});
+
+//FILTER:retorna os produtos que são mais de 30 reis 
+
+db.produtos.aggregate([
+    {
+        $project: {
+            _id: 0,
+            nome: 1,
+            preco: {
+                input: "$preco",
+                as: "preco_maior",
+                cond: {$gte: ["$preco", 30.00]}
+            }
+        }
+    }
+]);
+
+// FINDONE: Retorna uma bebida
+
+db.produtos.findOne({categoria: "Bebidas"});
